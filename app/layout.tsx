@@ -3,18 +3,18 @@ import { ClerkProvider } from '@clerk/nextjs';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
+import './globals.css';
 
 import '@stream-io/video-react-sdk/dist/css/styles.css';
 import 'react-datepicker/dist/react-datepicker.css';
-import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'YOOM',
-  description: 'Video calling App',
+  title: 'Eagles Ring',
+  description: 'Connectind aspiring entrepreneurs with investment opportunities',
   icons: {
-    icon: '/icons/logo.svg',
+    icon: '/EaglesRingLogo.png',
   },
 };
 
@@ -25,7 +25,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         appearance={{
           layout: {
             socialButtonsVariant: 'iconButton',
-            logoImageUrl: '/icons/yoom-logo.svg',
+            logoImageUrl: '/EaglesRingLogo.png',
           },
           variables: {
             colorText: '#fff',
