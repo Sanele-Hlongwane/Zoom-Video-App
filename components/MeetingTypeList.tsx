@@ -42,7 +42,7 @@ const MeetingTypeList = () => {
       await call.getOrCreate({ data: { starts_at: startsAt, custom: { description } } });
       setCallDetail(call);
       if (!values.description) {
-        router.push(`/meeting/${call.id}`);
+        router.push(`/VideoCall/meeting/${call.id}`);
       }
       toast({ title: 'Meeting Created' });
     } catch (error) {
