@@ -30,12 +30,12 @@ const Navbar = () => {
   return (
     <nav className="flex-between fixed z-50 w-full bg-dark-1 px-6 py-4 lg:px-10">
      
-      <nav className="bg-white/30 backdrop-blur-lg shadow-lg fixed top-0 left-0 right-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+      <nav className="fixed inset-x-0 top-0 z-50 bg-white/30 shadow-lg backdrop-blur-lg">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <div className="flex items-center space-x-2 cursor-pointer">
+              <div className="shrink-0">
+                <div className="flex cursor-pointer items-center space-x-2">
                   <Image src="/EaglesRingLogo.png" alt="Eagles Ring Logo" width={40} height={40} />
                 </div>
               </div>
@@ -50,9 +50,9 @@ const Navbar = () => {
               </div>
             </div>
             <div className="hidden sm:block">
-              <div className="ml-4 flex items-center md:ml-6 space-x-4">
+              <div className="ml-4 flex items-center space-x-4 md:ml-6">
                 <SignedOut>
-                  <div className="text-black hover:text-yellow-500 cursor-pointer">
+                  <div className="cursor-pointer text-black hover:text-yellow-500">
                     <SignInButton />
                   </div>
                 </SignedOut>
@@ -65,14 +65,14 @@ const Navbar = () => {
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 type="button"
-                className="bg-gray-900 text-gray-300 hover:text-white hover:bg-gray-800 inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300"
+                className="inline-flex items-center justify-center rounded-md bg-gray-900 p-2 text-gray-300 transition duration-300 hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 aria-controls="mobile-menu"
                 aria-expanded={isMenuOpen}
               >
                 <span className="sr-only">Open main menu</span>
                 {!isMenuOpen ? (
                   <svg
-                    className="block h-6 w-6"
+                    className="block size-6"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -88,7 +88,7 @@ const Navbar = () => {
                   </svg>
                 ) : (
                   <svg
-                    className="block h-6 w-6"
+                    className="block size-6"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -109,19 +109,19 @@ const Navbar = () => {
         </div>
 
         <div className={`${isMenuOpen ? "block" : "hidden"} sm:hidden`} id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="space-y-1 px-2 pb-3 pt-2">
             {menuItems.map((item, index) => (
               <Link key={index} href={item.link} passHref>
-                <p onClick={handleMenuItemClick} className="text-gray-800 block px-3 py-2 rounded-md text-base font-medium hover:text-yellow-500">{item.name}</p>
+                <p onClick={handleMenuItemClick} className="block rounded-md px-3 py-2 text-base font-medium text-gray-800 hover:text-yellow-500">{item.name}</p>
               </Link>
             ))}
             <SignedOut>
-              <div onClick={handleMenuItemClick} className="text-black hover:text-yellow-500 block px-3 py-2 rounded-md text-base font-medium cursor-pointer">
+              <div onClick={handleMenuItemClick} className="block cursor-pointer rounded-md px-3 py-2 text-base font-medium text-black hover:text-yellow-500">
                 <SignInButton />
               </div>
             </SignedOut>
             <SignedIn>
-              <div onClick={handleMenuItemClick} className="block px-3 py-2 rounded-md text-base font-medium cursor-pointer">
+              <div onClick={handleMenuItemClick} className="block cursor-pointer rounded-md px-3 py-2 text-base font-medium">
                 <UserButton />
               </div>
             </SignedIn>
