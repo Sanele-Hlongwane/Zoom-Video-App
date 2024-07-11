@@ -7,6 +7,7 @@ import Header from '@/components/Header ';
 import '@stream-io/video-react-sdk/dist/css/styles.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import './globals.css';
+import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           <Toaster />
           {children}
         </body>
+        <Footer />
       </ClerkProvider>
     </html>
   );
